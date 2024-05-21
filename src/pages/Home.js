@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DataService from "../modell/DataService";
-import Tablazat from "../view/Tablazat";
+import Tablazat2 from "../view/Tablazat2";
 //import Karytak from "../view/Kartyak";
 import { Form } from "react-bootstrap";
 
@@ -8,7 +8,7 @@ export default function Home() {
   const DB = new DataService();
   const [objLista1, setObjLista1] = useState([]);
   const [objLista2, setObjLista2] = useState([]);
-  const [value, setValue] = useState(["Emberi test"]);
+  const [value, setValue] = useState(["Emberitest"]);
 
   useEffect(() => {
     DB.getData("szavak/1", setObjLista1);
@@ -46,8 +46,9 @@ export default function Home() {
           <option value="Állatok">Állatok</option>
         </Form.Select>
       </Form.Group>
-      <Tablazat szavak={value == "Emberi test" ? objLista1 : objLista2} />
-       {/* {width > breakpoint ? (
+      <Tablazat2/>
+      {/*<Tablazat szavak={value == "Emberi test" ? objLista1 : objLista2} />
+        {width > breakpoint ? (
         <Tablazat szavak={value == "Emberi test" ? objLista1 : objLista2} />
       ) : (
         <Karytak szavak={getCurrentList()} />
